@@ -28,7 +28,7 @@
             
             settings.PublicKey = ""; //"Public Magaza Anahtarı",
             settings.PrivateKey = ""; //"Private Magaza Anahtarı",
-            settings.BaseUrl = "https://apitest.ipara.com/"; //Test için 
+            settings.BaseUrl = "https://api.ipara.com/"; //Test için 
             settings.Version = "1.0";
             settings.Mode = "T"; // Test -> T / Prod -> P
             settings.HashString="";
