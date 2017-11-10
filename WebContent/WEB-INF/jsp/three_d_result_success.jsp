@@ -1,3 +1,5 @@
+<%@page import="javax.xml.bind.JAXB"%>
+<%@page import="java.io.StringWriter"%>
 <%@page import="com.google.gson.GsonBuilder"%>
 <%@page import="ipara.core.entity.Product"%>
 <%@page import="java.util.ArrayList"%>
@@ -118,12 +120,12 @@
 
 <h1>3d Başarılı!</h1>
 
-<pre>
+
     <%
-    	Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
-    	out.println("  <h1>Sonuç</h1>");
-    	out.println(g.toJson(completeResponse).toString());
+    	       StringWriter sw = new StringWriter();
+                 JAXB.marshal(completeResponse, sw);	
+		out.println("  <h1>Sonuç</h1>");
+		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>");
     %>
-</pre>
 
 <jsp:include page="footer.jsp" />

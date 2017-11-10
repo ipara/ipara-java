@@ -1,3 +1,6 @@
+<%@page import="ipara.core.Helper"%>
+<%@page import="javax.xml.bind.JAXB"%>
+<%@page import="java.io.StringWriter"%>
 <%@page import="com.google.gson.GsonBuilder"%>
 <%@page import="ipara.core.response.ThreeDPaymentInitResponse"%>
 <%@page import="com.google.gson.Gson"%>
@@ -32,9 +35,10 @@
     		paymentResponse.hash = request.getParameter("hash");
     	}
 
-    	Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
-    	out.println("  <h1>Sonuç</h1>");
-    	out.println(g.toJson(paymentResponse).toString());
+                 StringWriter sw = new StringWriter();
+                 JAXB.marshal(paymentResponse, sw);	
+		out.println("  <h1>Sonuç</h1>");
+		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>");
     %>
 </pre>
 

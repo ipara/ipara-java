@@ -1,3 +1,6 @@
+<%@page import="ipara.core.Helper"%>
+<%@page import="javax.xml.bind.JAXB"%>
+<%@page import="java.io.StringWriter"%>
 <%@page import="com.google.gson.GsonBuilder"%>
 <%@page import="java.util.UUID"%>
 <%@page import="ipara.core.response.ApiPaymentResponse"%>
@@ -193,9 +196,11 @@
 		apiPaymentRequest.products.add(product2);
 
 		ApiPaymentResponse apiPaymentResponse = ApiPaymentRequest.execute(apiPaymentRequest, settings);
-		Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+		 StringWriter sw = new StringWriter();
+                 JAXB.marshal(apiPaymentResponse, sw);
+		
 		out.println("  <h1>Sonuç</h1>");
-		out.println("<pre>" + g.toJson(apiPaymentResponse) + "</pre>");
+		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>");
 
 	}
 %>

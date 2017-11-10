@@ -1,3 +1,6 @@
+<%@page import="ipara.core.Helper"%>
+<%@page import="javax.xml.bind.JAXB"%>
+<%@page import="java.io.StringWriter"%>
 <%@page import="com.google.gson.GsonBuilder"%>
 <%@page import="ipara.core.response.PaymentInquiryResponse"%>
 <%@page import="ipara.core.request.PaymentInquiryRequest"%>
@@ -49,10 +52,12 @@
 		PaymentInquiryResponse paymnentInquiryResponse = PaymentInquiryRequest.execute(paymentInquiryRequest,
 				settings);
 
-		Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+		    StringWriter sw = new StringWriter();
+                 JAXB.marshal(paymnentInquiryResponse, sw);
+		
 		out.println("  <h1>Sonuç</h1>");
-
-		out.println("<pre>" + g.toJson(paymnentInquiryResponse) + "</pre>");
+		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>");
+	
 
 	}
 %>
