@@ -113,19 +113,24 @@
 	</fieldset>
 </form>
 
+
+
+
 <%
 	request.setCharacterEncoding("UTF-8");
 
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
-
+	
+	<% /*Cüzdana kart ekleme servisi için gerekli olan parametrelerin doldurulduğu kısımdır. Setting ayarlarımızı alıp BankCardCreateRequest alanlarının formdan gelen verilere göre doldurulup post edildiği kısımdır. */ %>
+	
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
 		settings.privateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
-		settings.baseUrl = "https://api.ipara.com/"; //iPara web servisleri API url'lerinin başlangıç bilgisidir. Restful web servis isteklerini takip eden kodlar halinde bulacaksınız.
+		settings.baseUrl = "https://api.ipara.com/"; //"iPara web servisleri API url'lerinin başlangıç bilgisidir. Restful web servis isteklerini takip eden kodlar halinde bulacaksınız."
 		// Örneğin "https://api.ipara.com/" + "/rest/payment/auth"  = "https://api.ipara.com/rest/payment/auth" 
 		settings.version = "1.0";// Kullandığınız iPara API versiyonudur. 
-		settings.mode = "T"; // Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız.
-		settings.hashString = ""; // Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz.
+		settings.mode = "T"; // "Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız."
+		settings.hashString = ""; // "Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz."
 
 		BankCardCreateRequest bankCardCreateRequest = new BankCardCreateRequest();
 		bankCardCreateRequest.userId = request.getParameter("userId");
@@ -135,14 +140,10 @@
 		bankCardCreateRequest.cardExpireMonth = request.getParameter("month");
 		bankCardCreateRequest.cardExpireYear = request.getParameter("year");
 		bankCardCreateRequest.clientIp = "127.0.0.1";
-		BankCardCreateResponse bankCardCreateresponse = BankCardCreateRequest.execute(bankCardCreateRequest,
-				settings);
-
+		BankCardCreateResponse bankCardCreateresponse = BankCardCreateRequest.execute(bankCardCreateRequest,settings); //"Cüzdana kart ekleme servisi için istek çağrısının yapıldığı kısımdır."
 		Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
 		out.println("  <h1>Sonuç</h1>");
-
-		out.println("<pre>" + g.toJson(bankCardCreateresponse) + "</pre>");
-
+		out.println("<pre>" + g.toJson(bankCardCreateresponse) + "</pre>"); //"Cüzdana kart ekleme servisi için yapılan servis çağırısı sonucunda servis çıktı parametrelerinin ekranda gösterildiği kısımdır."
 	}
 %>
 

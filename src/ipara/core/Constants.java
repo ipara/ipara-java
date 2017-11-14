@@ -2,6 +2,13 @@ package ipara.core;
 
 public interface Constants {
 
+
+	/*
+		Constant sabitler
+		Aşağıdaki sabitler projenin her kısmında bu değişken isimleri ile çağırılmak zorundadır.
+		Bu değişkenler iPara'nın Request veya Response anında bizlerden beklediği alanları ifade eder.
+		Bu alanların kesinlikle değiştirilmemesi gereklidir.
+	*/
 	interface IparaHTTPHeaders {
 
 		public static final String TRANSACTION_DATE = "transactionDate";

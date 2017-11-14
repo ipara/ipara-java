@@ -56,6 +56,7 @@
 	}
 
 	if (Helper.validate3DReturn(paymentResponse, settings)) {
+			<%-- 3D secure 2. Adımında eğer 1. adım başarılı olarak geçtiyse ThreeDPaymentCompleteRequest datalarını formdan gelen bilgilerle dolduruyor ve post ediyoruz.   %>
 
 		ThreeDPaymentCompleteRequest completeRequest = new ThreeDPaymentCompleteRequest();
 		completeRequest.orderId = request.getParameter("orderId");
@@ -112,9 +113,7 @@
 		product2.price = "5000";
 		product2.quantity = "1";
 		completeRequest.products.add(product2);
-
-		completeResponse = ThreeDPaymentCompleteRequest.execute(completeRequest, settings);
-
+		completeResponse = ThreeDPaymentCompleteRequest.execute(completeRequest, settings); //"3D secure 2. adımının başlatılması için gerekli servis çağrısını temsil eder."
 	}
 %>
 
@@ -125,7 +124,7 @@
     	       StringWriter sw = new StringWriter();
                  JAXB.marshal(completeResponse, sw);	
 		out.println("  <h1>Sonuç</h1>");
-		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>");
+		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>"); //"Ödeme işlemi sonucunda ekranda gösterilecek servis çıktı parametrelerinin yer aldığı kısmı temsil etmektedir.
     %>
 
 <jsp:include page="footer.jsp" />

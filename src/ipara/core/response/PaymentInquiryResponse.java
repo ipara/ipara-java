@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import ipara.core.CoreResponse;
-
+//  Ödeme sorugulama servisi sonucunda oluşan servis çıktı parametrelerini temsil eder.
 @XmlRootElement(name = "inquiryResponse")
 public class PaymentInquiryResponse extends CoreResponse {
 

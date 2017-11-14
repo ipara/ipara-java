@@ -7,12 +7,18 @@ import ipara.core.RestHttpCaller;
 import ipara.core.Settings;
 import ipara.core.response.BankCardDeleteResponse;
 
+//Cüzdanda kayıtlı olan kartı silmek için gerekli olan servis girdi parametrelerini temsil eder.
 public class BankCardDeleteRequest extends CoreRequest {
 
 	public String userId;
 	public String cardId;
 	public String clientIp;
 
+	/*
+	 *	Mağazanın, kullanıcının bir kartını veya kayıtlı olan tüm kartlarını silmek istediği zaman kullanabileceği servisi temsil eder.
+	 *	@request Banka kartı silmek için gerekli olan girdilerin olduğu sınıfı temsil eder.
+	 *	@options Kullanıcıya özel olarak belirlenen ayarları temsil eder.
+	*/
 	public static BankCardDeleteResponse execute(BankCardDeleteRequest request, Settings settings) throws Exception {
 
 		settings.transactionDate = Helper.getTransactionDateString();

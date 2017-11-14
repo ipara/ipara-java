@@ -2,6 +2,7 @@ package ipara.core;
 
 import javax.xml.bind.annotation.XmlElement;
 
+//Tüm cevap sınıflarında kullanılacak olan alanları temsil etmektedir.
 public class CoreResponse {
 
 	@XmlElement(name = "result")

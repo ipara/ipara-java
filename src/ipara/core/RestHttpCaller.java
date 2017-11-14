@@ -15,12 +15,18 @@ import java.nio.charset.Charset;
 import java.util.Map;
 import javax.xml.bind.*;
 
+	/*
+	 *	JSON ve XML'leri verilen adreslere post eden sınıftır. Verilen Response sınıfına göre geri dönüş yapar,
+	 *	aynen kopyalanarak kullanılabilir
+	*/
 public class RestHttpCaller {
 
 
     public static RestHttpCaller getInstance() {
         return new RestHttpCaller();
     }
+
+	//Alanların Json olarak post edilmesine olanak sağlar.
 
     public <T> T postJson(String url, Map<String, String> headers, Object request, Class<T> responseType) {
 
@@ -34,7 +40,7 @@ public class RestHttpCaller {
         }
 
     }
-
+	// Xml olarak post edilmesi istenen istek sınıflarında gönderilen değerlerin xml olarak post edilmesine imkan sağlayan metodu temsil eder.
     public <T> T postXML(String url, Map<String, String> headers, Object request, Class<T> responseType) {
 
         StringWriter sw = new StringWriter();
@@ -48,7 +54,10 @@ public class RestHttpCaller {
         }
 
     }
-
+      /*
+	   * İlgili parametrelerle iPara serverlarına isteğin post edilmesi sağlanır.
+	  
+	  */
     private String send(String url, InputStream content, Map<String, String> headers, String contentType) {
 
         URLConnection raw;
@@ -79,7 +88,9 @@ public class RestHttpCaller {
         }
 
     }
-
+		/*
+		 * Http istek gövdesini oluşturan metodu temsil eder.
+		*/
     private void prepareRequestBody(InputStream content, HttpURLConnection conn) throws IOException {
 
         conn.setDoOutput(true);
@@ -92,7 +103,9 @@ public class RestHttpCaller {
         }
 
     }
-
+	/*
+	 *	iPara sucularından gelen veriyi modelin içerisine basmamıza olanak sağlar.
+	*/
     private void prepareOutputStream(InputStream content, OutputStream output) throws IOException {
         final byte[] buffer = new byte[8192];
         for (int bytes = content.read(buffer); bytes != -1;

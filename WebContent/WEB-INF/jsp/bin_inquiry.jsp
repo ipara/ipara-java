@@ -40,22 +40,27 @@
 
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
+	
+	<%-- Setting ayarlarımızı alıyoruz. Bin numarası Kredi Kartının üzerindeki ilk 6 hanedir. Formdan gelen bilgi ile bin numarasını ve Setting ayarlarımızı post ediyoruz.--%>
+	
+	
+	
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
 		settings.privateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
-		settings.baseUrl = "https://api.ipara.com/"; //iPara web servisleri API url'lerinin başlangıç bilgisidir. Restful web servis isteklerini takip eden kodlar halinde bulacaksınız.
+		settings.baseUrl = "https://api.ipara.com/"; //"iPara web servisleri API url'lerinin başlangıç bilgisidir. Restful web servis isteklerini takip eden kodlar halinde bulacaksınız."
 		// Örneğin "https://api.ipara.com/" + "/rest/payment/auth"  = "https://api.ipara.com/rest/payment/auth" 
-		settings.version = "1.0";// Kullandığınız iPara API versiyonudur. 
-		settings.mode = "T"; // Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız.
-		settings.hashString = ""; // Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz.
+		settings.version = "1.0";// "Kullandığınız iPara API versiyonudur. "
+		settings.mode = "T"; // "Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız."
+		settings.hashString = ""; // "Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz."
 
 		BinNumberInquiryRequest binRequest = new BinNumberInquiryRequest();
 		binRequest.binNumber = request.getParameter("binNumber");
-		BinNumberInquiryResponse binResponse = BinNumberInquiryRequest.execute(binRequest, settings);
+		BinNumberInquiryResponse binResponse = BinNumberInquiryRequest.execute(binRequest, settings); // "Bin sorgulama servisinin başlatıldığı kısım"
 
 		Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
 		out.println("  <h1>Sonuç</h1>");
-		out.println("<pre>" + g.toJson(binResponse) + "</pre>");
+		out.println("<pre>" + g.toJson(binResponse) + "</pre>"); //"Bin sorgulama servisi sonucunda oluşan çıktı parametrelerinin ekranda gösterildiği kısımdır."
 
 	}
 %>

@@ -2,6 +2,10 @@ package ipara.core.entity;
 
 import java.util.List;
 
+/*
+Bu sınıf cüzdana kart ekleme servisi isteği sonucunda ve cüzdandaki kartları getir isteği sonucunda bize döndürülen 
+alanları temsil etmektedir. 
+*/
 public class BankCard {
 
 	public String cardId;

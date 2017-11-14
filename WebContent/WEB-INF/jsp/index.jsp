@@ -134,9 +134,9 @@
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
 		settings.privateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
 		settings.baseUrl = "https://www.ipara.com/3dgate";
-		settings.version = "1.0";// Kullandığınız iPara API versiyonudur. 
-		settings.mode = "T"; // Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız.
-		settings.hashString = ""; // Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz.
+		settings.version = "1.0";// "Kullandığınız iPara API versiyonudur." 
+		settings.mode = "T"; // "Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız."
+		settings.hashString = ""; // "Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz."
 
 		ThreeDPaymentInitRequest initRequest = new ThreeDPaymentInitRequest();
 		UUID uuid = UUID.randomUUID();
@@ -166,7 +166,7 @@
 
 		initRequest.successUrl = baseURL + "three_d_result_success.htm";
 		initRequest.failUrl = baseURL + "three_d_result_fail.htm";
-		String form = ThreeDPaymentInitRequest.execute(initRequest, settings);
+		String form = ThreeDPaymentInitRequest.execute(initRequest, settings); //" 3D secure ödeme işleminin 1. adımını başlatmamızı sağlayan servis çağrısı"
 		out.println(form);
 
 	}

@@ -15,6 +15,7 @@ import ipara.core.entity.Product;
 import ipara.core.entity.Purchaser;
 import ipara.core.response.ThreeDPaymentCompleteResponse;
 
+// 3D Secure ile ödeme 2. Adımında gerekli olan 3D servis girdi parametrelerini temsil eder.
 @XmlRootElement(name = "auth")
 public class ThreeDPaymentCompleteRequest extends CoreRequest {
 
@@ -63,6 +64,12 @@ public class ThreeDPaymentCompleteRequest extends CoreRequest {
 	@XmlElement(name = "purchaser")
 	public Purchaser purchaser;
 
+	
+	/*
+	 *	3D Secure 2. Adımında ödeme onayı sağlanarak tahsilat gerçekleştirilmesi için gerekli olan servis isteğini temsil eder.
+	 *	@request Ödeme Onayı sağlamak için gerekli olan girdilerin olduğu sınıfı temsil eder.
+	 *	options Kullanıcıya özel olarak belirlenen ayarları temsil eder.
+	*/
 	public static ThreeDPaymentCompleteResponse execute(ThreeDPaymentCompleteRequest request, Settings settings) throws Exception {
         
         settings.transactionDate = Helper.getTransactionDateString();

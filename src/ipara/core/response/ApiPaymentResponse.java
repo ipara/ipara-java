@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import ipara.core.CoreResponse;
 
+// 3D secure olmadan ödeme servis çıktı parametre alanlarını temsil etmektedir.
 @XmlRootElement(name = "authResponse")
 public class ApiPaymentResponse extends CoreResponse {
 
