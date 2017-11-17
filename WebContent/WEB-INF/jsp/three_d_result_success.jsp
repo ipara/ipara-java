@@ -56,12 +56,8 @@
 	}
 
 	if (Helper.validate3DReturn(paymentResponse, settings)) {
-<<<<<<< HEAD
-			//3D secure 2. Adımında eğer 1. adım başarılı olarak geçtiyse ThreeDPaymentCompleteRequest datalarını formdan gelen bilgilerle dolduruyor ve post ediyoruz.
-=======
-			<%-- 3D secure 2. Adımında eğer 1. adım başarılı olarak geçtiyse ThreeDPaymentCompleteRequest datalarını formdan gelen bilgilerle dolduruyor ve post ediyoruz.   %>
->>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
-
+		
+		//3D secure 2. Adımında eğer 1. adım başarılı olarak geçtiyse ThreeDPaymentCompleteRequest datalarını formdan gelen bilgilerle dolduruyor ve post ediyoruz.	
 		ThreeDPaymentCompleteRequest completeRequest = new ThreeDPaymentCompleteRequest();
 		completeRequest.orderId = request.getParameter("orderId");
 		completeRequest.echo = "Echo";
