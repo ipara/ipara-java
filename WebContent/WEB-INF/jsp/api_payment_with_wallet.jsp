@@ -122,7 +122,11 @@
 	request.setCharacterEncoding("UTF-8");
 
 	
+<<<<<<< HEAD
 	//Cüzdandaki kart ile ödeme servisi. Setting ayarlarımızı alıp, ApiPaymentRequest alanlarını formdan gelen verilere göre doldurup post edildiği kısımdır.
+=======
+<%-- Cüzdandaki kart ile ödeme servisi. Setting ayarlarımızı alıp, ApiPaymentRequest alanlarını formdan gelen verilere göre doldurup post edildiği kısımdır. --%>
+>>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
 	
 	
 	if ("POST".equalsIgnoreCase(request.getMethod())) {

@@ -182,9 +182,13 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
+<<<<<<< HEAD
 	/* 3D secure olmadan ödeme işlemleri için gerekli olan parametrelerin doldurulduğu kısımdır. setting ayarlarımızı alıp, ApiPaymentRequest alanlarının formdan gelen verilere göre doldurup post edildiği kısımdır.
 	  Post işlemi sonucunda oluşan sonucu ekranda gösteriyoruz.
 	/*
+=======
+	<%-- 3D secure olmadan ödeme işlemleri için gerekli olan parametrelerin doldurulduğu kısımdır. setting ayarlarımızı alıp, ApiPaymentRequest alanlarının formdan gelen verilere göre doldurup post edildiği kısımdır. Post işlemi sonucunda oluşan sonucu ekranda gösteriyoruz. --%>
+>>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
 	
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 		

@@ -41,9 +41,13 @@
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
 	
+<<<<<<< HEAD
 	/* Setting ayarlarımızı alıyoruz. Bin numarası Kredi Kartının üzerindeki ilk 6 hanedir. 
 	   Formdan gelen bilgi ile bin numarasını ve Setting ayarlarımızı post ediyoruz
 	*/
+=======
+	<%-- Setting ayarlarımızı alıyoruz. Bin numarası Kredi Kartının üzerindeki ilk 6 hanedir. Formdan gelen bilgi ile bin numarasını ve Setting ayarlarımızı post ediyoruz.--%>
+>>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
 	
 	
 	

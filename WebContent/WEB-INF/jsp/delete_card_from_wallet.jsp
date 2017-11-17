@@ -39,9 +39,13 @@
 
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
+<<<<<<< HEAD
 		/*  Cüzdandaki kartları silmek için kullanılan sayfadır. Setting ayarlarımızı alıyoruz.
         	Formdan gelen bilgilerle BankCardDeleteRequest sınıfımızı dolduruyoruz. BankCardDeleteRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.
 		*/
+=======
+		<%--  Cüzdandaki kartları silmek için kullanılan sayfadır. Setting ayarlarımızı alıyoruz. Formdan gelen bilgilerle BankCardDeleteRequest sınıfımızı dolduruyoruz. BankCardDeleteRequest ve Setting ayarlarımızla sayfamızı post ediyoruz. %>
+>>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
 	
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
