@@ -121,14 +121,10 @@
 
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 	
-<<<<<<< HEAD
-	 /*
+	/*
 	   Cüzdana kart ekleme servisi için gerekli olan parametrelerin doldurulduğu kısımdır. 
 	   Setting ayarlarımızı alıp BankCardCreateRequest alanlarının formdan gelen verilere göre doldurulup post edildiği kısımdır.
 	 */
-=======
-	<% /*Cüzdana kart ekleme servisi için gerekli olan parametrelerin doldurulduğu kısımdır. Setting ayarlarımızı alıp BankCardCreateRequest alanlarının formdan gelen verilere göre doldurulup post edildiği kısımdır. */ %>
->>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
 	
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
