@@ -37,13 +37,10 @@
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
 	
-<<<<<<< HEAD
-	/* Setting ayarlarımızı alıyoruz. Formdan gelen bilgilerle PaymentInquiryRequest sınıfımızı dolduruyoruz.
-   	   PaymentInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.
-	*/
-=======
-	<%-- Setting ayarlarımızı alıyoruz. Formdan gelen bilgilerle PaymentInquiryRequest sınıfımızı dolduruyoruz. PaymentInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.%>
->>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
+		/* 
+		   Setting ayarlarımızı alıyoruz. Formdan gelen bilgilerle PaymentInquiryRequest sınıfımızı dolduruyoruz.
+		   PaymentInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.
+		*/
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
 		settings.privateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
