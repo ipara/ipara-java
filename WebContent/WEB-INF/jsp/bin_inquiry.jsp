@@ -41,16 +41,10 @@
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
 	
-<<<<<<< HEAD
-	/* Setting ayarlarımızı alıyoruz. Bin numarası Kredi Kartının üzerindeki ilk 6 hanedir. 
-	   Formdan gelen bilgi ile bin numarasını ve Setting ayarlarımızı post ediyoruz
-	*/
-=======
-	<%-- Setting ayarlarımızı alıyoruz. Bin numarası Kredi Kartının üzerindeki ilk 6 hanedir. Formdan gelen bilgi ile bin numarasını ve Setting ayarlarımızı post ediyoruz.--%>
->>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
-	
-	
-	
+		/* Setting ayarlarımızı alıyoruz. Bin numarası Kredi Kartının üzerindeki ilk 6 hanedir. 
+		   Formdan gelen bilgi ile bin numarasını ve Setting ayarlarımızı post ediyoruz
+		*/
+
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
 		settings.privateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
