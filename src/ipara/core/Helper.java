@@ -37,15 +37,11 @@ public class Helper {
 		Servis çağrılarında kullanılacak istek zamanı için istenen tarih formatında bu fonksiyon kullanılmalıdır.
 	*/
 	
-<<<<<<< HEAD
-    //Bu fonksiyon verdiğimiz tarih değerini iPara'nın bizden beklemiş olduğu tarih formatına değiştirmektedir.
-	public static String getTransactionDateString() {
-=======
-    Bu fonksiyon verdiğimiz tarih değerini iPara'nın bizden beklemiş olduğu tarih formatına değiştirmektedir.public static String getTransactionDateString() {
->>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return simpleDateFormat.format(new Date());
-    }
+	  //Bu fonksiyon verdiğimiz tarih değerini iPara'nın bizden beklemiş olduğu tarih formatına değiştirmektedir.
+		public static String getTransactionDateString() {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return simpleDateFormat.format(new Date());
+	    }
 
 	/*
 	 *	Çağrılarda kullanılacak Tokenları oluşturan yardımcı metotdur. 
