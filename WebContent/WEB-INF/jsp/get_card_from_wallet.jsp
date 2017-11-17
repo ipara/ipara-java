@@ -39,13 +39,10 @@
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
 	
-<<<<<<< HEAD
-	/* Cüzdandaki kartları listelemek için kullanıclan sayfadır. Setting ayarlarımızı alıyoruz. 
-	   Formdan gelen bilgilerle BankCardInquiryRequest sınıfımızı dolduruyoruz.BankCardInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.
-	*/
-=======
-	<%-- Cüzdandaki kartları listelemek için kullanıclan sayfadır. Setting ayarlarımızı alıyoruz. Formdan gelen bilgilerle BankCardInquiryRequest sınıfımızı dolduruyoruz.BankCardInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz. %>
->>>>>>> 31fa770d12420a5336a2b264960e5833bddb2e8b
+		/*  
+		    Cüzdandaki kartları listelemek için kullanıclan sayfadır. Setting ayarlarımızı alıyoruz. 
+		    Formdan gelen bilgilerle BankCardInquiryRequest sınıfımızı dolduruyoruz.BankCardInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.
+		*/
 
 		Settings settings = new Settings();
 		settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
