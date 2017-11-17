@@ -7,6 +7,7 @@ import ipara.core.RestHttpCaller;
 import ipara.core.Settings;
 import ipara.core.response.BankCardCreateResponse;
 
+// Cüzdana kart ekleme servisi içerisinde kullanılacak alanları temsil etmektedir.
 public class BankCardCreateRequest extends CoreRequest {
 
 	public String userId;
@@ -17,6 +18,13 @@ public class BankCardCreateRequest extends CoreRequest {
 	public String cardExpireYear;
 	public String clientIp;
 
+	
+	/*
+	 *	Cüzdana kart ekleme istek metodur. Bu metod çeşitli kart bilgilerini ve settings sınıfı içerisinde bize özel olarak oluşan alanları kullanarak cüzdana 
+	 *	bir kartı kaydetmemizi sağlar.
+	 *	@request  Cüzdana kart eklemek için gerekli olan girdilerin olduğu sınıfı temsil eder.
+	 *	@options Kullanıcıya özel olarak belirlenen ayarları temsil eder.
+	*/
 	public static BankCardCreateResponse execute(BankCardCreateRequest request, Settings settings) throws Exception {
 
 		settings.transactionDate = Helper.getTransactionDateString();

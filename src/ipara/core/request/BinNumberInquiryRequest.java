@@ -7,10 +7,17 @@ import ipara.core.RestHttpCaller;
 import ipara.core.Settings;
 import ipara.core.response.BinNumberInquiryResponse;
 
+// Bin Sorgulama servisleri içerisinde kullanılacak olan bin numarasını temsil eder.
 public class BinNumberInquiryRequest  extends CoreRequest{
 
     public String binNumber;
 
+	/*
+	 *	Türkiye genelinde tanımlı olan tüm yerli kartlara ait BIN numaraları için sorgulama yapılmasına izin veren servisi temsil eder.
+	 *	@request Istek olarak gelen bin numarasını temsil etmektedir.
+	 *	@options Kullanıcıya özel olarak belirlenen ayarları temsil eder.		
+	
+	*/
     public static BinNumberInquiryResponse execute(BinNumberInquiryRequest request, Settings settings) throws Exception {
 
         settings.transactionDate = Helper.getTransactionDateString();

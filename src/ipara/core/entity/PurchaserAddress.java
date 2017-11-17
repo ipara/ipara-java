@@ -2,6 +2,10 @@ package ipara.core.entity;
 
 import javax.xml.bind.annotation.XmlElement;
 
+/*
+Bu sınıf 3D secure olmadan ödeme kısmında müşteri adres bilgisinin kullanılacağı yerde ve
+3D Secure ile Ödeme'nin 2. adımında müşteri adres bilgisinin istendiği yerde kullanılır.
+*/
 public class PurchaserAddress {
 
 	@XmlElement(name = "name")

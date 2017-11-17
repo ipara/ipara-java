@@ -15,6 +15,7 @@ import ipara.core.entity.Product;
 import ipara.core.entity.Purchaser;
 import ipara.core.response.ApiPaymentResponse;
 
+//3D Secure Olmadan Ödeme için gerekli olan servis girdi parametrelerini temsil eder.
 @XmlRootElement(name = "auth")
 public class ApiPaymentRequest extends CoreRequest {
 
@@ -63,6 +64,11 @@ public class ApiPaymentRequest extends CoreRequest {
 	@XmlElement(name = "purchaser")
 	public Purchaser purchaser;
 
+	/*
+	 *	3D Secure Olmadan Ödeme Servis çağrısını temsil eder.
+	 *	@request 3D Secure olmadan gerekli olan servis girdi parametrelerini temsil eder.
+	 *	@options Kullanıcıya özel olarak belirlenen ayarları temsil eder.
+	*/
 	public static ApiPaymentResponse execute(ApiPaymentRequest request, Settings settings) throws Exception {
 		settings.transactionDate = Helper.getTransactionDateString();
 		settings.hashString = settings.privateKey

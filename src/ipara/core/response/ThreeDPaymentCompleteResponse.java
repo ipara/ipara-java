@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import ipara.core.CoreResponse;
-
+//  3D Secure ile ödeme 2. adımı sonucunda oluşan servis çıktı parametrelerini temsil etmektedir.
 @XmlRootElement(name = "authResponse")
 public class ThreeDPaymentCompleteResponse extends CoreResponse {
 

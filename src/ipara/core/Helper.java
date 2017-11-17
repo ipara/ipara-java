@@ -32,11 +32,27 @@ import org.w3c.dom.ls.LSSerializer;
 
 public class Helper {	
 
-    public static String getTransactionDateString() {
+	/*
+		Doğru formatta tarih döndüren yardımcı sınıftır. Isteklerde tarih istenen noktalarda bu fonksiyon sonucu kullanılır.
+		Servis çağrılarında kullanılacak istek zamanı için istenen tarih formatında bu fonksiyon kullanılmalıdır.
+	*/
+	
+    //Bu fonksiyon verdiğimiz tarih değerini iPara'nın bizden beklemiş olduğu tarih formatına değiştirmektedir.
+	public static String getTransactionDateString() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return simpleDateFormat.format(new Date());
     }
 
+	/*
+	 *	Çağrılarda kullanılacak Tokenları oluşturan yardımcı metotdur. 
+	 *	İstek güvenlik bilgisi kullanılacak tüm çağrılarda token oluşturmamız gerekmektedir.
+	 *	Token oluştururken hash bilgisi ve public key alanlarının parametre olarak gönderilmesi gerekmektedir.
+	 *	hashstring alanı servise ait birden fazla alanın birleşmesi sonucu oluşan verileri ve public key mağaza açık anahtarını 
+	 *	kullanarak bizlere token üretmemizi sağlar.
+		
+	 *	@publicKey Mağaza Açık Anahtarınız
+	 *	@hashString Servise özel bir çok alanın birleştirilmesiyle oluşturulan veriler bütünü
+	*/
     public static String createToken(String publicKey, String hashString) throws Exception {
         try {
             MessageDigest sha1 = MessageDigest.getInstance(Constants.Formats.SHA1);
@@ -47,11 +63,18 @@ public class Helper {
         }
     }
 
+	/*
+	 *	Verilen string'i SHA1 ile hashleyip Base64 formatına çeviren fonksiyondur.
+	 *	CreateToken'dan farklı olarak token oluşturmaz sadece hash hesaplar
+	*/
     public static String computeHash(String hashString) throws Exception {
         MessageDigest sha1 = MessageDigest.getInstance(Constants.Formats.SHA1);
         return DatatypeConverter.printBase64Binary(sha1.digest(hashString.getBytes(Constants.Formats.UTF8)));
     }
 
+	/*
+		Bir çok çağrıda kullanılan HTTP Header bilgilerini otomatik olarak ekleyen fonksiyondur.
+	*/
     public static Map<String, String> getHttpHeaders(Settings settings, String acceptType) throws Exception {
         Map<String, String> headers = new HashMap<>();
         headers.put(Constants.StandardHTTPHeaders.ACCEPT, acceptType);
@@ -60,7 +83,7 @@ public class Helper {
         headers.put(Constants.IparaHTTPHeaders.TRANSACTION_DATE, settings.transactionDate);
         return headers;
     }
-
+	//3D akışının ilk adımında yapılan işlemin ardından gelen cevabın doğrulanması adına kullanılacak fonksiyondur. 
     public static boolean validate3DReturn(ThreeDPaymentInitResponse paymentResponse, Settings settings) throws Exception {
         if (paymentResponse.hash == null) {
             throw new Exception("Ödeme cevabı hash bilgisi boş. [result : " + paymentResponse.result + ",error_code : " + paymentResponse.errorCode + ",error_message : " + paymentResponse.errorMessage + "]");
@@ -82,7 +105,10 @@ public class Helper {
         }
         return true;
     }
- 
+	 /*
+		* Parametre olarak verilen xml verisinin ekranlarda daha güzel gözükmesini sağlar.
+		* Bu kısım api çağrılarında kullanılmaz sadece çıktının daha güzel gözükmesini sağlar.
+	 */
     public static String xmlFormatter(String xml) {
 
         try {
@@ -106,6 +132,11 @@ public class Helper {
         }
 }
     
+	/*
+	 * Xml verisinin ekranda daha düzgün gözükmesi için kullanılan metodu temsil eder.
+	 * Api çağırılarında bu alanlar kullanılmaz. Sadece çıktının daha düzgün gözükmesi sağlanır.
+	
+	*/
    public static  String prettyPrintXml(String xmlString)  throws Exception  {
 
      try 

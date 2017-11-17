@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import ipara.core.CoreRequest;
 import ipara.core.Helper;
 import ipara.core.Settings;
-
+// 3D Ödeme Formu başlatmak için gerekli olan servis girdi parametrelerini temsil eder. 
 @XmlRootElement(name = "auth")
 public class ThreeDPaymentInitRequest extends CoreRequest{
 
@@ -64,6 +64,12 @@ public class ThreeDPaymentInitRequest extends CoreRequest{
     @XmlElement(name = "token")
     public String token;
 
+	
+	/*
+	 *	 Diğer fonksiyonların aksine 3D Sınıfı bir formun post edilmesi ile başlar 
+     *    Bu sebeble bu fonksiyon ilgili HTML formu oluşturur ve geri döndürür.
+     *    Bu formu mevcut formun üzerine yazmak ilgili formun Javascript ile post edilmesini sağlar.
+	*/
     public static String createThreeDPaymentForm(ThreeDPaymentInitRequest request, Settings settings) {
 
         StringBuilder builder = new StringBuilder();
@@ -110,6 +116,12 @@ public class ThreeDPaymentInitRequest extends CoreRequest{
 
     }
 
+	
+	/*
+	 *	3D secure 1. Adımında kullanıcı bilgileri alındıktan sonra ilgili servis isteğini temsil eder. 
+	 *	@request 3D secure 1. Adımında gerekli olan servis girdi parametrelerini temsil eder.
+	 *	@options Kullanıcıya özel olarak belirlenen ayarları temsil eder.
+	*/
     public static String execute(ThreeDPaymentInitRequest request, Settings settings) throws Exception {
 
         request.transactionDate = Helper.getTransactionDateString();

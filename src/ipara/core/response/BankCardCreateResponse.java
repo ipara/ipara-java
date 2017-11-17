@@ -3,7 +3,7 @@ package ipara.core.response;
 import java.util.List;
 
 import ipara.core.CoreResponse;
-
+// Cüzdana kart ekleme servis çıktı parametre alanlarını temsil eder.
 public class BankCardCreateResponse extends CoreResponse {
 
 	public String cardId;

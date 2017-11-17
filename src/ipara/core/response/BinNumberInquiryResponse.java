@@ -3,7 +3,7 @@ package ipara.core.response;
 import java.util.List;
 
 import ipara.core.CoreResponse;
-
+// Bin Sorgulama servisi sonucunda oluşan servis çıktı parametre alanlarını temsil etmektedir. 
 public class BinNumberInquiryResponse extends CoreResponse {
 
 	public String bankId;
