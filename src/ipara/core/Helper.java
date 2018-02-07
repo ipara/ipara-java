@@ -98,8 +98,8 @@ public class Helper {
                 + settings.publicKey
                 + settings.privateKey;
         String hashedText = computeHash(hashText);
-        System.out.println(paymentResponse.hash);
-        System.out.println(hashedText);
+        System.out.println("Hash Value in Payment Response  : " + paymentResponse.hash);
+        System.out.println("Hash Value at Local Computation : " + hashedText);
         if (!hashedText.equals(paymentResponse.hash)) {
             throw new Exception("Ödeme cevabı hash doğrulaması hatalı. [result : " + paymentResponse.result + ",error_code : " + paymentResponse.errorCode + ",error_message : " + paymentResponse.errorMessage + "]");
         }

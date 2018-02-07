@@ -59,6 +59,7 @@ public class ThreeDPaymentCompleteRequest extends CoreRequest {
 	public String threeDSecureCode;
 
 	@XmlElementWrapper(name = "products")
+	@XmlElement(name = "product")
 	public List<Product> products;
 
 	@XmlElement(name = "purchaser")

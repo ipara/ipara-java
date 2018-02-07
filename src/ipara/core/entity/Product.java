@@ -20,6 +20,5 @@ public class Product {
 	public String quantity;
 
 	@XmlElement(name = "price")
-	public String price;
-
+	public String price;	
 }
