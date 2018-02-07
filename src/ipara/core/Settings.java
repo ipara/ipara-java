@@ -12,7 +12,7 @@ import ipara.core.request.ThreeDPaymentInitRequest;
 
 public class Settings {
 	
-	public String echo;
+	public String echo = "echo";
 	public String publicKey  = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",;
 	public String privateKey  = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",;
 	public String baseUrl = "https://api.ipara.com/"; //"iPara web servisleri API url'lerinin başlangıç bilgisidir. Restful web servis isteklerini takip eden kodlar halinde bulacaksınız."
