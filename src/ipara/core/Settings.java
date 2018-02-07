@@ -1,7 +1,5 @@
 package ipara.core;
 
-import ipara.core.request.ThreeDPaymentInitRequest;
-
 /*
 	Tüm çağrılarda kullanılacak ayarların tutulduğu sınıftır. 
 	Bu sınıf üzerinde size özel parametreler fonksiyonlar arasında taşınabilir.
