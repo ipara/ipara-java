@@ -76,7 +76,7 @@ public class ThreeDPaymentInitRequest extends CoreRequest{
         builder.append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">");
         builder.append("<html>");
         builder.append("<body>");
-        builder.append("<form //action=\"" + settings.baseUrl + "\" method=\"post\" id=\"three_d_form\" >");
+        builder.append("<form //action=\"" + settings.threeDInquiryUrl + "\" method=\"post\" id=\"three_d_form\" >");
         builder.append("<input type=\"hidden\" name=\"orderId\" value=\"" + request.orderId + "\"/>");
         builder.append("<input type=\"hidden\" name=\"amount\" value=\"" + request.amount + "\"/>");
         builder.append("<input type=\"hidden\" name=\"cardOwnerName\" value=\"" + request.cardOwnerName + "\"/>");

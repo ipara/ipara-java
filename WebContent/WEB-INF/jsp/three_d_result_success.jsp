@@ -26,13 +26,6 @@
 	request.setCharacterEncoding("UTF-8");
 	Settings settings = new Settings();
 
-	settings.publicKey = ""; //"Public Magaza Anahtarı",
-	settings.privateKey = ""; //"Private Magaza Anahtarı",
-	settings.baseUrl = "https://api.ipara.com/"; //Test için 
-	settings.version = "1.0";
-	settings.mode = "T"; // Test -> T / Prod -> P
-	settings.hashString = "";
-
 	ThreeDPaymentInitResponse paymentResponse = new ThreeDPaymentInitResponse();
 	paymentResponse.orderId = request.getParameter("orderId");
 	paymentResponse.result = request.getParameter("result");

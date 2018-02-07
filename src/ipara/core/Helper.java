@@ -78,7 +78,7 @@ public class Helper {
     public static Map<String, String> getHttpHeaders(Settings settings, String acceptType) throws Exception {
         Map<String, String> headers = new HashMap<>();
         headers.put(Constants.StandardHTTPHeaders.ACCEPT, acceptType);
-        headers.put(Constants.IparaHTTPHeaders.TOKEN, settings.version);
+        headers.put(Constants.IparaHTTPHeaders.VERSION, settings.version);
         headers.put(Constants.IparaHTTPHeaders.TOKEN, createToken(settings.publicKey, settings.hashString));
         headers.put(Constants.IparaHTTPHeaders.TRANSACTION_DATE, settings.transactionDate);
         return headers;
