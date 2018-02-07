@@ -25,5 +25,5 @@ public class Settings {
 	/**
 	 * @see Helper#getTransactionDateString()
 	 */
-	public String transactionDate; //transaction'in yapıldığı tarihi belirtir. Helper#getTransactionDate()
+	public String transactionDate; //transaction'in yapıldığı tarihi belirtir.
 }
