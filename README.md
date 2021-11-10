@@ -171,7 +171,7 @@ Sorularınız olması durumunda bize [Destek](http://dev.ipara.com.tr/Home/Suppo
 
 | Versiyon	| Versiyon Yenilikleri    	                                                                        |
 |---------	|-------------------------------------------------------------------------------------------	|
-| 1.0.1     | -İki adımlı ThreeD ödemesi kaldırılıp **Tek adımlı ThreeD** ödemesi eklendi.<br />-Ödeme sorgulama servisinde ek olarak **tarih filtresi** eklendi.<br />-**Link ile ödeme, ödeme linki sorgulama,ödeme linki silme** servisleri eklendi.<br />-**Ürün iade bilgisi sorgulama,ürün iade talebi** oluşturma servisleri eklendi. <br />-**Bin sorgualama servisine tutar bilgisi** eklenerek komisyon bilgisi kullanıcıya sunuldu. |
+| 1.0.1     | -İki adımlı ThreeD ödemesi kaldırılıp **Tek adımlı ThreeD** ödemesi eklendi.<br />-Ödeme sorgulama servisinde ek olarak **tarih filtresi** eklendi.<br />-**Link ile ödeme, ödeme linki sorgulama,ödeme linki silme** servisleri eklendi.<br />-**Ürün iade bilgisi sorgulama,ürün iade talebi** oluşturma servisleri eklendi. <br />-**Bin sorgulama servisine tutar bilgisi** eklenerek komisyon bilgisi kullanıcıya sunuldu. |
 
 
     
