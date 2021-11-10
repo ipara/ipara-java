@@ -28,4 +28,6 @@ public class BinNumberInquiryResponse extends CoreResponse {
 
 	public String businessCard;
 
+	public List<RequiredAmountDTO> installmentDetail;
+
 }

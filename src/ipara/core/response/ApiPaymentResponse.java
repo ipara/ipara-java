@@ -15,4 +15,7 @@ public class ApiPaymentResponse extends CoreResponse {
 	@XmlElement(name = "orderId")
 	public String orderId;
 
+	@XmlElement(name = "commissionRate")
+	public String commissionRate;
+
 }

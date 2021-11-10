@@ -10,7 +10,7 @@
 <form method="post" class="form-horizontal">
 	<fieldset>
 		<!-- Form Name -->
-		<legend>Cüzdandan Kart Sil</legend>
+		<legend>Cüzdan Kart Sil</legend>
 		<!-- Text input-->
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="">Kullanıcı Id:</label>
@@ -28,7 +28,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for=""></label>
 			<div class="col-md-4">
-				<button type="submit" id="" name="" class="btn btn-success">Sorgula</button>
+				<button type="submit" id="" name="" class="btn btn-success">Sil</button>
 			</div>
 		</div>
 	</fieldset>

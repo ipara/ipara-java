@@ -53,7 +53,7 @@
 			> Kart Numarası:</label>
 			<div class="col-md-4">
 				<input
-					value="4282209027132016"
+					value="4662803300111364"
 					name="cardNumber"
 					class="form-control input-md"
 					required
@@ -67,7 +67,7 @@
 			> Kart Kısa Adı: </label>
 			<div class="col-md-4">
 				<input
-					value="Maas Karti"
+					value="Kredi Karti"
 					name="cardAlias"
 					class="form-control input-md"
 					required
@@ -81,13 +81,13 @@
 			> Son Kullanma Tarihi Ay/Yıl: </label>
 			<div class="col-md-4">
 				<input
-					value="05"
+					value="10"
 					name="month"
 					class="form-control input-md"
 					width="50px"
 					required
 				> <input
-					value="18"
+					value="25"
 					name="year"
 					class="form-control input-md"
 					width="50px"
@@ -107,7 +107,7 @@
 					id=""
 					name=""
 					class="btn btn-success"
-				>Sorgula</button>
+				>Kart Ekle</button>
 			</div>
 		</div>
 	</fieldset>

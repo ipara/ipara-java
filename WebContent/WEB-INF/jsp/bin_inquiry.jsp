@@ -19,9 +19,18 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="binNumber">Bin Numarası</label>
 			<div class="col-md-4">
-				<input id="binNumber" name="binNumber" type="text" placeholder="" value="492130" class="form-control input-md"
+				<input id="binNumber" name="binNumber" type="text" placeholder="" value="466280" class="form-control input-md"
 					required=""
 				>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="binNumber">Tutar</label>
+			<div class="col-md-4">
+				<input id="amount" name="amount" type="text" placeholder="" value="" class="form-control input-md"
+					   required=""
+				>
+				<label style="font-weight:normal; font-size:small">*Sipariş tutarı kuruş ayracı olmadan gönderilmelidir. Örneğin; 1 TL 100, 12 1200, 130 13000, 1.05 105, 1.2 120 olarak gönderilmelidir.</label>
 			</div>
 		</div>
 		<!-- Button -->
@@ -49,6 +58,7 @@
 
 		BinNumberInquiryRequest binRequest = new BinNumberInquiryRequest();
 		binRequest.binNumber = request.getParameter("binNumber");
+		binRequest.amount = request.getParameter("amount");
 		BinNumberInquiryResponse binResponse = BinNumberInquiryRequest.execute(binRequest, settings); // "Bin sorgulama servisinin başlatıldığı kısım"
 
 		Gson g = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();

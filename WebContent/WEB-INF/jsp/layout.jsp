@@ -38,22 +38,30 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<img
-					src="<%=request.getContextPath()%>/Content/iPara_disi-01.png"
-					width="10%"
-					height="10%"
+						src="<%=request.getContextPath()%>/Content/ipara-logo.svg"
+						width="9%"
+						height="9%"
 				/>
 				<ul class="nav navbar-nav">
-					<li><a href="index.htm">3d Ödeme</a></li>
+					<li><a href="one_step_payment.htm">Tek Adımda 3D Ödeme</a></li>
 					<li><a href="api_payment.htm">(Non-3d) Ödeme</a></li>
 					<li><a href="payment_inqury.htm">Ödeme Sorgulama</a></li>
+					<li><a href="payment_inqury_with_time.htm">Ödeme Sorgulama(Tarih Aralığında)</a></li>
+					<li><a href="payment_refund_inquiry.htm">İade Sorgulama</a></li>
+					<li><a href="create_payment_refund.htm">İade Oluşturma</a></li>
 					<li><a href="bin_inquiry.htm">Bin Sorgulama</a></li>
 					<li><a href="add_card_to_wallet.htm">Cüzdana Kart Ekle </a></li>
 					<li><a href="get_card_from_wallet.htm">Cüzdandaki Kartları Listele</a></li>
 					<li><a href="delete_card_from_wallet.htm">Cüzdandan Kart Sil</a></li>
 					<li><a href="api_payment_with_wallet.htm">Cüzdandaki Kart (Tek Tıkla) İle Ödeme</a></li>
+					<li><a href="create_link_payment.htm" >Link İle Ödeme (Link Gönderim)</a></li>
+					<li><a href="link_payment_list.htm">Link İle Ödeme (Link Sorgulama)</a></li>
+					<li><a href="link_payment_delete.htm">Link İle Ödeme (Link Silme)</a></li>
+
+
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="container body-content">
-		<br /> <br /> <br />
+		<br /> <br/> <br/>

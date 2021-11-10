@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ipara-java</groupId>
 	<artifactId>ipara-java</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>war</packaging>
 	<name>ipara-java</name>
 	<description>Sample iPara integration project</description>

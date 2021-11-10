@@ -55,8 +55,8 @@ public class ApiPaymentRequest extends CoreRequest {
 	@XmlElement(name = "cardId")
 	public String cardId;
 
-	@XmlElement(name = "threeDSecureCode")
-	public String threeDSecureCode;
+	@XmlElement(name = "waitingConfirmation")
+	public String waitingConfirmation;
 
 	@XmlElementWrapper(name = "products")
 	@XmlElement(name = "product")
@@ -64,7 +64,9 @@ public class ApiPaymentRequest extends CoreRequest {
 
 	@XmlElement(name = "purchaser")
 	public Purchaser purchaser;
-	
+
+
+
 	/*
 	 *	3D Secure Olmadan Ödeme Servis çağrısını temsil eder.
 	 *	@request 3D Secure olmadan gerekli olan servis girdi parametrelerini temsil eder.

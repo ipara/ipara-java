@@ -57,9 +57,9 @@
 		completeRequest.mode = settings.mode;
 		completeRequest.amount = "10000"; // 100 tL
 		completeRequest.cardOwnerName = "Fatih Coşkun";
-		completeRequest.cardNumber = "4282209027132016";
-		completeRequest.cardExpireMonth = "05";
-		completeRequest.cardExpireYear = "18";
+		completeRequest.cardNumber = "4662803300111364";
+		completeRequest.cardExpireMonth = "10";
+		completeRequest.cardExpireYear = "25";
 		completeRequest.installment = "1";
 		completeRequest.cvc = "000";
 		completeRequest.threeD = "true";

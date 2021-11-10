@@ -1,51 +1,151 @@
-iPara Java Kütüphanesi
+ipara-java
 ===================
+iPara Java Client Kütüphanesidir. iPara API'lerine çok hızlı bir şekilde bağlanmanızı sağlar.
+[https://www.ipara.com.tr](https://www.ipara.com.tr) adresimizden mağaza başvurusu yaparak
+hesabınızı açabilirsiniz.
 
-iPara Java Client Kütüphanesidir. iPara API'lerine çok hızlı bir şekilde bağlanmanızı sağlayan bu projeyi indirip hızlıca inceleyebilirsiniz. 
+## Sistem Gereksinimleri
 
+* Java 1.8 ve üzeri yeni versiyonlar
 
-## Kullanım
+### Maven User
+```xml
+<dependency>
+  <groupId>ipara-java</groupId>
+  <artifactId>ipara-java</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
 
-iPara servislerini kullanabilmek için [iPara'ya](https://www.ipara.com.tr) üye olmalısınız. Üye olduktan sonra iPara sizinle private ve public keylerinizi paylaşacaktır. Paylaşılan bu anahtarları kendi projenizde ilgili yerlere yazarak saklamanız ve kullanmanız gerekmektedir.
+### Entegrasyon sürecinde dikkat edilecek noktalar
 
-## Önemli Notlar
+iPara servislerini kullanabilmek için [iPara'ya](https://www.ipara.com.tr) üye olmalısınız.
+Üye olduktan sonra Mağaza Listesi > Detay sayfası içerisindeki Public ve Private Key sizinle paylaşılacaktır. 
+Paylaşılan bu anahtarları ipara-java projesinde Settings classda yer alan publicKey ve privateKey alanlarına eklemeniz gerekmektedir.
+```java
+public class Settings{
 
-Örnek projelerimizi daha iyi anlamak için [iPara geliştirici merkezini](http://dev.ipara.com.tr) takip etmeniz büyük önem arz etmektedir. 
+	public String echo = "echo";
+	public String publicKey  = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",;
+	public String privateKey  = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",;
+	public String baseUrl = "https://api.ipara.com/"; //"iPara web servisleri API url'lerinin başlangıç bilgisidir. Restful web servis isteklerini takip eden kodlar halinde bulacaksınız."
 
-İlgili örnek proje bir Core Library ve bir de Java Web projesi barındırır. İlgili örneği kendi private key ve public key'inizle birlikte test ederek kullanabilirsiniz. Örnek datalardaki değişkenleri kendi projenizdeki gerçek verilerle set etmeyi unutmayınız. 
-
-* Servisleri kullanabilmek için iPara kurum başvuru aşamalarını tamamlamış olmanız gerekmektedir. Başvuru adımlarını tamamladıktan sonra kurum panelinizden alabileceğiniz public ve private key bilgileri ile servisleri kullanabilirsiniz.
-* Entegrasyon işlemlerinde encoding “UTF-8” kullanılması gerekmektedir. Özellikle token parametresinden kaynaklı alınan hataların büyük çoğunluğu encoding problemlerinden kaynaklanmaktadır. Ek olarak XML dili için olan özel karakterlerin gönderiminde hata almamak için yine encoding yapılması gerekmektedir.
+}
+```
+Örnek projelerimizdeki servislerimizi daha iyi anlamak için [iPara geliştirici merkezini](http://dev.ipara.com.tr) takip etmeniz büyük önem arz etmektedir.
+* Entegrasyon işlemlerinde encoding “UTF-8” kullanılması önerilmektedir.Token parametrelerinden kaynaklı sorun encoding probleminden kaynaklanmaktadır. Özel karakterlerde encoding işlemi yapılmalıdır.
 * Servis isteği yaparaken göndermiş olduğunuz alanların başında ve sonunda oluşabilecek boşluk alanlarını kaldırmanızı ( trim() ) önemle rica ederiz. Çünkü bu alanlar oluşacak hash sonuçlarını etkilemektedir.
 * Entegrasyon dahilinde gönderilen input alanlarında, kart numarası alanı dışında kart numarası bilgisi gönderilmesi halinde işlem reddedilecektir.
 
-## Önemli Uyarı:
+iPara örnek projelerinin amacı, yazılım geliştiricilere iPara servislerine entegre olabilecek bir proje örneği sunmak ve entegrasyon adımlarının daha iyi anlaşılmasını sağlamaktır.
+Projeleri doğrudan canlı ortamınıza alarak kod değişimi yapmadan kullanmanız için desteğimiz bulunmamaktadır. **Projeyi bir eğitsel kaynak (tutorial) olarak kullanınız.**
 
-iPara örnek projelerinin amacı, yazılım geliştiricilere iPara servislerine entegre olabilecek bir proje örneği sunmak ve entegrasyon adımlarının daha iyi anlaşılmasını sağlamaktır. Projeleri doğrudan canlı ortamınıza alarak kod değişimi yapmadan kullanmanız için desteğimiz bulunmamaktadır. **Projeyi bir eğitsel kaynak (tutorial) olarak kullanınız.**
+### Test Kartları
+Başarılı bir ödemeyi test etmek için aşağıdaki kart numaralarını ve diğer bilgileri kullanabilirsiniz. 
 
-## Test Kartları
+| Sıra No 	| Kart Numarası    	| SKT   	| CVC 	| Banka                 | Kart Ailesi            |
+|---------	|------------------	|-------	|-----	| ---------------       | ---------              |
+| 1       	| 4282209004348015 	| 12/22 	| 123 	| Garanti Bankası       | BONUS                  | 
+| 2       	| 5571135571135575 	| 12/22 	| 000 	| Akbank                | AXESS                  |
+| 3       	| 4355084355084358 	| 12/22 	| 000 	| Akbank                | AXESS                  |
+| 4       	| 4662803300111364 	| 10/25 	| 000 	| Alternatif Bank       | BONUS                  |
+| 5      	| 4022774022774026 	| 12/24 	| 000 	| Finansbank            | CARD FINANS            |
+| 6       	| 5456165456165454 	| 12/24 	| 000 	| Finansbank            | CARD FINANS            |
+| 7         | 9792023757123604  | 01/26     | 861   | Finansbank            | FINANSBANK DEBIT       |
+| 8       	| 4531444531442283 	| 12/24 	| 000 	| Aktif Yatırım Bankası | AKTIF KREDI KARTI      |       
+| 9       	| 5818775818772285 	| 12/24 	| 000 	| Aktif Yatırım Bankası | AKTIF KREDI KARTI      |      
+| 10      	| 4508034508034509 	| 12/24 	| 000 	| İş bankası            | MAXIMUM                |
+| 11      	| 5406675406675403 	| 12/24 	| 000 	| İş bankası            | MAXIMUM                |
+| 12      	| 4025903160410013 	| 07/22 	| 123 	| Kuveyttürk            | KUVEYTTURK KREDI KARTI |
+| 13      	| 5345632006230604 	| 12/24 	| 310 	| Aktif Yatırım Bankası | AKTIF KREDI KARTI      |
+| 14      	| 4282209027132016 	| 12/24 	| 358 	| Garanti Bankası       | BONUS                  |                  
+| 15      	| 4029400154245816 	| 03/24 	| 373 	| Vakıf Bank            | WORLD                  |                  
+| 16      	| 4029400184884303 	| 01/23 	| 378 	| Vakıf Bank            | WORLD                  | 
+| 17      	| 9792350046201275 	| 07/27	 	| 993 	| TÜRK ELEKTRONIK PARA  | PARAM KART             | 
+| 18      	| 6501700194147183	| 03/27	 	| 136 	| Vakıf Bank            | WORLD                  |
+| 19     	| 6500528865390837	| 01/22	 	| 686 	| Vakıf Bank            | VAKIFBANK DEBIT        |
 
-Testleriniz sırasında aşağıdaki kart numaralarını ve diğer bilgileri kullanabilirsiniz. 
+Test kartlarımızda alınan hata kodları ve çözümleriyle ilgili detaylı bilgiye ulaşabilmek için [iPara Hata Kodları](https://dev.ipara.com.tr/home/ErrorCode) inceleyebilirsiniz.
 
-| Sıra No 	| Kart Numarası    	| SKT   	| CVC 	|
-|---------	|------------------	|-------	|-----	|
-| 1       	| 4282209004348015 	| 12/22 	| 123 	|
-| 2       	| 5571135571135575 	| 12/22 	| 000 	|
-| 3       	| 4355084355084358 	| 12/22 	| 000 	|
-| 4       	| 4662803300111364 	| 10/25 	| 000 	|
-| 5       	| 5166570072166334 	| 10/25 	| 000 	|
-| 6       	| 4022774022774026 	| 12/18 	| 000 	|
-| 7       	| 5456165456165454 	| 12/18 	| 000 	|
-| 8       	| 4531444531442283 	| 12/18 	| 000 	|
-| 9       	| 5818775818772285 	| 12/18 	| 000 	|
-| 10      	| 4508034508034509 	| 12/18 	| 000 	|
-| 11      	| 5406675406675403 	| 12/18 	| 000 	|
-| 12      	| 4025903160410013 	| 07/20 	| 123 	|
-| 13      	| 5345632006230604 	| 03/19 	| 310 	|
-| 14      	| 4282209027132016 	| 05/18 	| 358 	|
-| 15      	| 4029400154245816 	| 03/24 	| 373 	|
-| 16      	| 4029400184884303 	| 01/23 	| 378 	|
+### Örnek Kullanım Yöntemi
+```java
+        Settings settings = new Settings();
+        settings.privateKey ="your private key";
+        settings.publicKey="your public key";
 
+        OneStepPaymentRequest oneStepPaymentRequest = new OneStepPaymentRequest();
+        UUID uuid = UUID.randomUUID();
+
+        oneStepPaymentRequest.setOrderId(uuid.toString());
+        oneStepPaymentRequest.setAmount("10000");
+        oneStepPaymentRequest.setCardOwnerName("Murat Kaya");
+        oneStepPaymentRequest.setCardNumber("5456165456165454");
+        oneStepPaymentRequest.setCardExpireMonth("12");
+        oneStepPaymentRequest.setCardExpireYear("24");
+        oneStepPaymentRequest.setCardCvc("000");
+        oneStepPaymentRequest.setInstallment("1");
+        oneStepPaymentRequest.setLanguage("tr-TR");
+        oneStepPaymentRequest.setMode("T");
+
+        Purchaser purchaser = new Purchaser();
+        purchaser.name ="Murat";
+        purchaser.surname = "Kaya";
+        purchaser.email = "murat@kaya.com";
+        purchaser.birthDate = new SimpleDateFormat(SIMPLE_DATE_FORMAT).format(new Date());
+        purchaser.gsmNumber = "5400343434";
+        purchaser.clientIp ="192.168.0.54";
+        purchaser.tcCertificate = "99999999999";
+
+        PurchaserAddress invoiceAddress = new PurchaserAddress();
+        invoiceAddress.name = "Murat";
+        invoiceAddress.surname = "Kaya";
+        invoiceAddress.address = "Mevlüt Pehlivan Mah. Multinet Plaza Şişli";
+        invoiceAddress.zipcode = "34782";
+        invoiceAddress.city = "34";
+        invoiceAddress.country = "TR";
+        invoiceAddress.tcCertificate = "1234567890";
+        invoiceAddress.taxNumber = "9999999999";
+        invoiceAddress.taxOffice="Kozyatağı";
+        invoiceAddress.companyName = "iPara";
+        invoiceAddress.phoneNumber="2122222222";
+
+        PurchaserAddress shippingAddress = new PurchaserAddress();
+        shippingAddress.name ="Murat";
+        shippingAddress.surname = "Kaya";
+        shippingAddress.address = "Mevlüt Pehlivan Mah. Multinet Plaza Şişli";
+        shippingAddress.zipcode = "34782";
+        shippingAddress.city ="34";
+        shippingAddress.country = "TR";
+        shippingAddress.phoneNumber = "2122222222";
+
+        purchaser.invoiceAddress=invoiceAddress;
+        purchaser.shippingAddress=shippingAddress;
+
+        oneStepPaymentRequest.setPurchaser(purchaser);
+
+        List<Product> products = new ArrayList<>();
+        
+        Product p = new Product();
+        p.price="5000";
+        p.code="TLF0001";
+        p.title="Telefon";
+        p.quantity="1";
+        products.add(p);
+        
+        Product p1 = new Product();
+        p1.price="5000";
+        p1.code="BLG0001";
+        p1.title="Bilgisayar";
+        p1.quantity="1";
+        products.add(p1);
+
+        oneStepPaymentRequest.setProducts(products);
+        oneStepPaymentRequest.setSaveCardRequest(true);
+        oneStepPaymentRequest.setPreAuth(false);
+
+        OneStepPaymentResponse response = OneStepPaymentRequest.Execute(oneStepPaymentRequest, settings);
+
+```
 ## Hash Hesaplama
 iPara servislerine entegre olurken alınan hataların en sık karşılaşılanı hash değerinin doğru hesaplanmasıdır. Hash değeri her servise göre değişen verilerin yanyana eklenmesi ile oluşan değerin bir dizi işleme tabi tutulması ile oluşur. 
 
@@ -66,3 +166,15 @@ Her örnek projenin Helper sınıfı içinde hash hesaplama ile alakalı bir fon
 * Canlı ortama geçiş sonrası ilk işlemleri kendi kredi kartlarınız ile deneyerek sonuçlarını size özel Kurum ekranlarından görüntüleyin. Sonuçların ve işlemlerin doğru tamamlandığından emin olun.
 
 Sorularınız olması durumunda bize [Destek](http://dev.ipara.com.tr/Home/Support) üzerinden yazabilirsiniz. 
+
+### Versiyon Yenilikleri
+
+| Versiyon	| Versiyon Yenilikleri    	                                                                        |
+|---------	|-------------------------------------------------------------------------------------------	|
+| 1.0.1     | -İki adımlı ThreeD ödemesi kaldırılıp **Tek adımlı ThreeD** ödemesi eklendi.<br />-Ödeme sorgulama servisinde ek olarak **tarih filtresi** eklendi.<br />-**Link ile ödeme, ödeme linki sorgulama,ödeme linki silme** servisleri eklendi.<br />-**Ürün iade bilgisi sorgulama,ürün iade talebi** oluşturma servisleri eklendi. <br />-**Bin sorgulama servisine tutar bilgisi** eklenerek komisyon bilgisi kullanıcıya sunuldu. |
+
+
+    
+
+
+

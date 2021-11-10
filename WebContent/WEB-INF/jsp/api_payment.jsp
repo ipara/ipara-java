@@ -110,7 +110,7 @@
 			> Kart Numarası:</label>
 			<div class="col-md-4">
 				<input
-					value="4282209027132016"
+					value="4662803300111364"
 					name="cardNumber"
 					class="form-control input-md"
 				>
@@ -123,12 +123,12 @@
 			> Son Kullanma Tarihi Ay/Yıl: </label>
 			<div class="col-md-4">
 				<input
-					value="05"
+					value="10"
 					name="month"
 					class="form-control input-md"
 					width="50px"
 				> <input
-					value="18"
+					value="25"
 					name="year"
 					class="form-control input-md"
 					width="50px"
@@ -206,6 +206,7 @@
 		apiPaymentRequest.cardId = "";
 		apiPaymentRequest.userId = "";
 		apiPaymentRequest.threeD = "false";
+		apiPaymentRequest.waitingConfirmation ="false";
 
 		apiPaymentRequest.purchaser = new Purchaser();
 		apiPaymentRequest.purchaser.name = "Murat";
@@ -246,12 +247,6 @@
 		product1.price = "5000";
 		product1.quantity = "1";
 		apiPaymentRequest.products.add(product1);
-		Product product2 = new Product();
-		product2.title = "Bilgisayar";
-		product2.code = "BLG0001";
-		product2.price = "5000";
-		product2.quantity = "1";
-		apiPaymentRequest.products.add(product2);
 
 		ApiPaymentResponse apiPaymentResponse = ApiPaymentRequest.execute(apiPaymentRequest, settings); // "3D secure olmadan ödeme yapma servis çağrısının yapıldığı kısımdır."
 

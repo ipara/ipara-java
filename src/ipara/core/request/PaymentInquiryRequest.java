@@ -1,18 +1,15 @@
 package ipara.core.request;
 
+import ipara.core.*;
+import ipara.core.response.PaymentInquiryResponse;
+import ipara.core.response.PaymentInquiryWithTimeResponse;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import ipara.core.Constants;
-import ipara.core.CoreRequest;
-import ipara.core.Helper;
-import ipara.core.RestHttpCaller;
-import ipara.core.Settings;
-import ipara.core.response.PaymentInquiryResponse;
-
 //  Ödeme sorugulama servisi için gerekli olan servis girdi parametrelerini temsil eder.
 @XmlRootElement(name = "inquiry")
-public class PaymentInquiryRequest  extends CoreRequest{
+public class PaymentInquiryRequest extends CoreRequest{
 
 	@XmlElement(name = "orderId")
 	public String orderId;
