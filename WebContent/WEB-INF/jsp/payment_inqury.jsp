@@ -18,7 +18,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="">Sipariş Numarası:</label>
 			<div class="col-md-4">
-				<input name="orderId" type="text" value="58e1e9f22690b" class="form-control input-md" required>
+				<input name="orderId" type="text" value="2dc6d77e-21be-4557-9551-89cd2feead0c" class="form-control input-md" required>
 			</div>
 		</div>
 		<!-- Button -->
@@ -36,8 +36,8 @@
 
 	if ("POST".equalsIgnoreCase(request.getMethod())) {
 
-	
-		/* 
+
+		/*
 		   Setting ayarlarımızı alıyoruz. Formdan gelen bilgilerle PaymentInquiryRequest sınıfımızı dolduruyoruz.
 		   PaymentInquiryRequest ve Setting ayarlarımızla sayfamızı post ediyoruz.
 		*/
@@ -50,9 +50,9 @@
 		PaymentInquiryResponse paymnentInquiryResponse = PaymentInquiryRequest.execute(paymentInquiryRequest,
 				settings); //"Ödeme sorgulama servisi başlatılması için gerekli servis çağırısını temsil eder."
 
-		    StringWriter sw = new StringWriter();
-                 JAXB.marshal(paymnentInquiryResponse, sw);
-		
+		StringWriter sw = new StringWriter();
+		JAXB.marshal(paymnentInquiryResponse, sw);
+
 		out.println("  <h1>Sonuç</h1>");
 		out.println("<pre>" + Helper.prettyPrintXml(sw.toString()) + "</pre>"); //"Ödeme sorgulama servis çağrısı sonucunda oluşan servis çıktı parametrelerinin ekranda gösterilmesini sağlar"
 	}

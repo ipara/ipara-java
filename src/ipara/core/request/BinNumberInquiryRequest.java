@@ -11,6 +11,8 @@ import ipara.core.response.BinNumberInquiryResponse;
 public class BinNumberInquiryRequest  extends CoreRequest{
 
     public String binNumber;
+    public String amount ;
+    public String threeD ="true";
 
 	/*
 	 *	Türkiye genelinde tanımlı olan tüm yerli kartlara ait BIN numaraları için sorgulama yapılmasına izin veren servisi temsil eder.
@@ -24,7 +26,7 @@ public class BinNumberInquiryRequest  extends CoreRequest{
         settings.hashString = settings.privateKey
                 + request.binNumber
                 + settings.transactionDate;
-        return RestHttpCaller.getInstance().postJson(settings.baseUrl + "rest/payment/bin/lookup",
+        return RestHttpCaller.getInstance().postJson(settings.baseUrl + "rest/payment/bin/lookup/v2",
                 Helper.getHttpHeaders(settings, Constants.ContentTypes.APPLICATION_JSON_UTF8),
                 request, BinNumberInquiryResponse.class);
 

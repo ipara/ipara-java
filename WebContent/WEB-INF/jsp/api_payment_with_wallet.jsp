@@ -85,13 +85,13 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="">Kullanıcı Id:</label>
 			<div class="col-md-4">
-				<input name="userId" type="text" value="" class="form-control input-md">
+				<input name="userId" type="text" value="" class="form-control input-md" required="">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="">Kart Id:</label>
 			<div class="col-md-4">
-				<input name="cardId" type="text" value="" class="form-control input-md">
+				<input name="cardId" type="text" value="" class="form-control input-md" required="">
 			</div>
 		</div>
 	</fieldset>
