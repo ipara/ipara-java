@@ -13,7 +13,7 @@ hesabınızı açabilirsiniz.
 <dependency>
   <groupId>ipara-java</groupId>
   <artifactId>ipara-java</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
