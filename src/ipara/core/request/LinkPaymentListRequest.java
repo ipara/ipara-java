@@ -16,6 +16,7 @@ public class LinkPaymentListRequest extends CoreRequest {
     public String pageSize;
     public String pageIndex;
     public String clientIp;
+    public String linkId;
 
     /*
      *	Link ile Ödeme Link Listeleme Servis çağrısını temsil eder.

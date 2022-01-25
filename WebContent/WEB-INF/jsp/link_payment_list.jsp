@@ -63,9 +63,16 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="">Link Oluşturma Alanına Ait Arama Bitiş Tarihi : </label>
             <div class="col-md-4 form-inline">
-                <input type="text" name="endDay" value="15" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2">
-                <input type="text" name="endMonth" value="11" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2">
-                <input type="text" name="endYear" value="2021" class="form-control input-md" style="width: 112px; text-align: center;" maxlength="4">
+                <input type="text" name="endDay" value="01" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2">
+                <input type="text" name="endMonth" value="01" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2">
+                <input type="text" name="endYear" value="2022" class="form-control input-md" style="width: 112px; text-align: center;" maxlength="4">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="">Ödeme Linki ID : </label>
+            <div class="col-md-4">
+                <input type="text" name="linkId" class="form-control input-md">
+
             </div>
         </div>
         <div class="form-group">
@@ -121,6 +128,9 @@
         {
             linkPaymentListRequest.startDate = null;
             linkPaymentListRequest.endDate = null;
+        }
+        if(request.getParameter("linkId") !=null && request.getParameter("linkId") != "" ){
+            linkPaymentListRequest.linkId =   request.getParameter("linkId");
         }
         linkPaymentListRequest.pageSize = request.getParameter("pageSize");
         linkPaymentListRequest.pageIndex = request.getParameter("pageIndex");
