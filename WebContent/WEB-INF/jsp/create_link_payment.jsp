@@ -83,8 +83,8 @@ class="form-horizontal">
         <label class="col-md-4 control-label" for="">Link Geçerlilik Süresi (Gün/Ay/Yıl) * : </label>
         <div class="col-md-4 form-inline">
             <input name="day" type="text" value="15" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2" required="required">
-            <input name="month" type="text" value="11" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2" required="required">
-            <input name="year" type="text" value="2021" class="form-control input-md" style="width: 112px; text-align: center;" maxlength="4" required="required">
+            <input name="month" type="text" value="01" class="form-control input-md" style="width: 80px; text-align: center;" maxlength="2" required="required">
+            <input name="year" type="text" value="2022" class="form-control input-md" style="width: 112px; text-align: center;" maxlength="4" required="required">
 
         </div>
     </div>

@@ -274,8 +274,6 @@
     products.add(p1);
 
     dto.setProducts(products);
-    dto.setSaveCardRequest(true);
-    dto.setPreAuth(false);
 
 
     String form = dto.execute(dto, settings); // "3D secure Tek adımlı ödeme yapma servis çağrısının yapıldığı kısımdır."

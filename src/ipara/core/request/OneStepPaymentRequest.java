@@ -21,13 +21,12 @@ public class OneStepPaymentRequest {
     private String orderId;
     private String cardOwnerName;
     private String cardNumber;
+    private String cardAlias;
     private String cardExpireMonth;
     private String cardExpireYear;
     private String cardCvc;
     private String userId;
     private String cardId;
-    private String cardAlias;
-    private boolean saveCardRequest;
     private String installment;
     private String amount;
     private String echo;
@@ -38,20 +37,10 @@ public class OneStepPaymentRequest {
     private String deviceUUId;
     private String token;
     private String language;
-    private Boolean threeD;
-    private String threeDSecureCode;
     private String vendorId;
-    private String referer;
-    private String productType;
     private String custField1;
-    private String custField2;
-    private String custField3;
-    private String custField4;
-    private String custField5;
-    private String paymentWithRegisteredCard;
     private Purchaser purchaser;
     private List<Product> products;
-    private boolean preAuth;
 
     public String getMode() {
         return mode;
@@ -205,22 +194,6 @@ public class OneStepPaymentRequest {
         this.language = language;
     }
 
-    public Boolean getThreeD() {
-        return threeD;
-    }
-
-    public void setThreeD(Boolean threeD) {
-        this.threeD = threeD;
-    }
-
-    public String getThreeDSecureCode() {
-        return threeDSecureCode;
-    }
-
-    public void setThreeDSecureCode(String threeDSecureCode) {
-        this.threeDSecureCode = threeDSecureCode;
-    }
-
     public String getVendorId() {
         return vendorId;
     }
@@ -229,13 +202,6 @@ public class OneStepPaymentRequest {
         this.vendorId = vendorId;
     }
 
-    public String getReferer() {
-        return referer;
-    }
-
-    public void setReferer(String referer) {
-        this.referer = referer;
-    }
 
     public String getCustField1() {
         return custField1;
@@ -243,38 +209,6 @@ public class OneStepPaymentRequest {
 
     public void setCustField1(String custField1) {
         this.custField1 = custField1;
-    }
-
-    public String getCustField2() {
-        return custField2;
-    }
-
-    public void setCustField2(String custField2) {
-        this.custField2 = custField2;
-    }
-
-    public String getCustField3() {
-        return custField3;
-    }
-
-    public void setCustField3(String custField3) {
-        this.custField3 = custField3;
-    }
-
-    public String getCustField4() {
-        return custField4;
-    }
-
-    public void setCustField4(String custField4) {
-        this.custField4 = custField4;
-    }
-
-    public String getCustField5() {
-        return custField5;
-    }
-
-    public void setCustField5(String custField5) {
-        this.custField5 = custField5;
     }
 
 
@@ -294,13 +228,6 @@ public class OneStepPaymentRequest {
         this.products = products;
     }
 
-    public String getPaymentWithRegisteredCard() {
-        return paymentWithRegisteredCard;
-    }
-
-    public void setPaymentWithRegisteredCard(String paymentWithRegisteredCard) {
-        this.paymentWithRegisteredCard = paymentWithRegisteredCard;
-    }
 
     public String getCardAlias() {
         return cardAlias;
@@ -310,29 +237,7 @@ public class OneStepPaymentRequest {
         this.cardAlias = cardAlias;
     }
 
-    public boolean isSaveCardRequest() {
-        return saveCardRequest;
-    }
 
-    public void setSaveCardRequest(boolean saveCardRequest) {
-        this.saveCardRequest = saveCardRequest;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
-
-    public boolean isPreAuth() {
-        return preAuth;
-    }
-
-    public void setPreAuth(boolean preAuth) {
-        this.preAuth = preAuth;
-    }
 
 
     /*
