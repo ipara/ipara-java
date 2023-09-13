@@ -50,6 +50,7 @@
 					<li><a href="payment_refund_inquiry.htm">İade Sorgulama</a></li>
 					<li><a href="create_payment_refund.htm">İade Oluşturma</a></li>
 					<li><a href="bin_inquiry.htm">Bin Sorgulama</a></li>
+					<li><a href="bin_inquiry_v4.htm">Bin Sorgulama (V4)</a></li>
 					<li><a href="add_card_to_wallet.htm">Cüzdana Kart Ekle </a></li>
 					<li><a href="get_card_from_wallet.htm">Cüzdandaki Kartları Listele</a></li>
 					<li><a href="delete_card_from_wallet.htm">Cüzdandan Kart Sil</a></li>
@@ -57,6 +58,7 @@
 					<li><a href="create_link_payment.htm" >Link İle Ödeme (Link Gönderim)</a></li>
 					<li><a href="link_payment_list.htm">Link İle Ödeme (Link Sorgulama)</a></li>
 					<li><a href="link_payment_delete.htm">Link İle Ödeme (Link Silme)</a></li>
+					<li><a href="checkout_form_create.htm">Checkout Form Oluşturma</a></li>
 
 
 				</ul>

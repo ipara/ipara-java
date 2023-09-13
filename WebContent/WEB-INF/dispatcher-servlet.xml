@@ -24,6 +24,7 @@
 				<prop key="three_d_result_fail.htm">ThreeDResultFailController</prop>
 				<prop key="three_d_result_success.htm">ThreeDResultSuccessController</prop>
 				<prop key="bin_inquiry.htm">BinInquiryController</prop>
+				<prop key="bin_inquiry_v4.htm">BinInquiryV4Controller</prop>
 				<prop key="api_payment.htm">ApiPaymentController</prop>
 				<prop key="one_step_payment.htm">OneStepPaymentController</prop>
 				<prop key="payment_inqury.htm">PaymentInquryController</prop>
@@ -37,6 +38,7 @@
 				<prop key="link_payment_delete.htm">LinkPaymentDeleteController</prop>
 				<prop key="create_payment_refund.htm">CreatePaymentRefund</prop>
 				<prop key="payment_refund_inquiry.htm">PaymentRefundInquiry</prop>
+				<prop key="checkout_form_create.htm">CheckoutFormCreateController</prop>
 			</props>
 		</property>
 	</bean>
@@ -69,6 +71,11 @@
 			p:viewName="bin_inquiry" />
 
 	<bean
+			name="BinInquiryV4Controller"
+			class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+			p:viewName="bin_inquiry_v4" />
+
+	<bean
 			name="ApiPaymentController"
 			class="org.springframework.web.servlet.mvc.ParameterizableViewController"
 			p:viewName="api_payment" />
@@ -99,6 +106,11 @@
 			name="LinkPaymentDeleteController"
 			class="org.springframework.web.servlet.mvc.ParameterizableViewController"
 			p:viewName="link_payment_delete" />
+
+	<bean
+			name="CheckoutFormCreateController"
+			class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+			p:viewName="checkout_form_create" />
 
 	<bean
 			name="PaymentInquryController"
