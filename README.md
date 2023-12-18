@@ -8,15 +8,6 @@ hesabınızı açabilirsiniz.
 
 * Java 1.8 ve üzeri yeni versiyonlar
 
-### Maven User
-```xml
-<dependency>
-  <groupId>ipara-java</groupId>
-  <artifactId>ipara-java</artifactId>
-  <version>1.0.1</version>
-</dependency>
-```
-
 ### Entegrasyon sürecinde dikkat edilecek noktalar
 
 iPara servislerini kullanabilmek için [iPara'ya](https://www.ipara.com.tr) üye olmalısınız.
